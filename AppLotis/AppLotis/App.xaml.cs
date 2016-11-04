@@ -8,6 +8,7 @@ using Xamarin.Forms;
 namespace AppLotis {
     public partial class App : Application {
         public App() {
+
             InitializeComponent();
 
             MainPage = new AppLotis.MainPage();
