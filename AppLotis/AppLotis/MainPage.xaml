@@ -2,10 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppLotis"
+             xmlns:validation="clr-namespace:AppLotis.Validation;assembly=AppLotis"
              x:Class="AppLotis.MainPage">
-
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+<StackLayout Padding="0,20,0,0">
+ 
+  <!-- <Image Source="http://i.imgur.com/3M0Xzca.png" Scale="1" /> -->
+  <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
+ 
+  <Label Text="Modelo" HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Entry HorizontalTextAlignment="Center"></Entry>
+  
+  <Label Text="Marca"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Entry HorizontalTextAlignment="Center"/>
+  
+  <Label Text="Placa"    HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Entry x:Name="EntryPlaca" HorizontalTextAlignment="Center">
+    <Entry.Behaviors>
+      <validation:PlacaValidatorBehavior /> 
+    </Entry.Behaviors> 
+   </Entry>
+  
+  <Label Text="Cor"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Entry HorizontalTextAlignment="Center"/>
+  
+  <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnContinuarClicked"/>
+  
+</StackLayout>
 
 </ContentPage>
