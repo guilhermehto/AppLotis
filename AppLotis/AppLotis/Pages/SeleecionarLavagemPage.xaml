@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLotis.Pages.SeleecionarLavagemPage">
+  <StackLayout Padding="20,20,20,0">
+    <Label TextColor="#2C3E50" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Feito! Agora selecione o tipo de lavagem que deseja" />
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Tipo de Lavagem"/>
+    
+    <Picker x:Name="SpinnerLavagens" SelectedIndex="1">
+      <Picker.Items>
+        <x:String>Lavagem Expressa</x:String>
+        <x:String>Lavagem Completa</x:String>
+      </Picker.Items>
+    </Picker>
+
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Adicionais"/>
+
+
+    <!-- TODO: Mostrar opções baseado na lavagem selecionada-->
+    <Picker x:Name="SpinnerAdicionais">
+      <Picker.Items>
+        <x:String>Silicone para interior</x:String>
+        <x:String>Cristalizador de vidros</x:String>
+      </Picker.Items>
+    </Picker>
+    
+    <Button Text="Selecionar Adicional" Clicked="OnAdicionarClicked"/>
+    
+    <ListView x:Name="ListViewAdicionais">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Adicional}" />
+                <Label Text="{Binding Valor}" />
+                <Button Text="Remover" HorizontalOptions="EndAndExpand" Clicked="OnRemoverClicked"/>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <Button TextColor="#FFFFFF" BackgroundColor="#2C3E50" Text="Continuar" Clicked="OnContinuarClicked"/>
+
+
+  </StackLayout>
+</ContentPage>

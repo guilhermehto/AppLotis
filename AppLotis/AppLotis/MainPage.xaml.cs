@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
+using AppLotis.Pages;
+using Xamarin.Forms.Maps;
 
 namespace AppLotis {
     public partial class MainPage : ContentPage {
@@ -13,29 +15,27 @@ namespace AppLotis {
             InitializeComponent();
         }
 
-        /*private void PlacaTextChanged(object sender, TextChangedEventArgs e) {
-            EntryPlaca.TextChanged -= PlacaTextChanged;
-            if (e.NewTextValue.Length == 3 && e.OldTextValue != null && e.OldTextValue.Length == 2) {
-                EntryPlaca.Text = e.NewTextValue + "-";
-            }
-
-            if (e.NewTextValue.Length > 4 && !Regex.IsMatch(e.NewTextValue[e.NewTextValue.Length -1].ToString(), @"[0-9]")) {
-                EntryPlaca.Text = e.OldTextValue;
-            } else if (e.NewTextValue.Length < 4 && e.NewTextValue.Length != 0) {
-                if (!Regex.IsMatch(e.NewTextValue[e.NewTextValue.Length - 1].ToString(), @"[a-zA-Z]")) {
-                    EntryPlaca.Text = e.OldTextValue;
-                } else if (Regex.IsMatch(e.NewTextValue[e.NewTextValue.Length - 1].ToString(), @"[a-z]")) {
-                    var novoTexto = e.OldTextValue + e.NewTextValue[e.NewTextValue.Length - 1].ToString().ToUpper();
-                    EntryPlaca.Text = novoTexto;
+        async void OnContinuarClicked(object sender, EventArgs e) {
+            bool carregar = true;
+            foreach (var child in StackPrincipal.Children) {
+                if (child.GetType() == typeof(Entry)) {
+                    if (String.IsNullOrEmpty(((Entry) child).Text)) {
+                        carregar = false;
+                        ((Entry)child).Placeholder = "Preencher";
+                        ((Entry)child).PlaceholderColor = Color.Red;
+                    }
+                    else if(((Entry)child).BackgroundColor == Color.Red) {
+                        ((Entry)child).Placeholder = "Erro";
+                        ((Entry)child).PlaceholderColor = Color.Red;
+                    }
                 }
             }
-            Task.Yield();
-            EntryPlaca.TextChanged += PlacaTextChanged;
-        }*/
-
-        private void OnContinuarClicked(object sender, EventArgs e) {
-            
-
+            if (carregar) {
+                await Navigation.PushModalAsync(new SeleecionarLavagemPage());
+            }
+            else {
+                await DisplayAlert("Erro", "Por favor, preencha todos os campos.", "Ok");
+            }
         }
     }
 }

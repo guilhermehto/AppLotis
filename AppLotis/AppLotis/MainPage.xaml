@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppLotis"
              xmlns:validation="clr-namespace:AppLotis.Validation;assembly=AppLotis"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="AppLotis.MainPage">
-<StackLayout Padding="0,20,0,0">
- 
-  <!-- <Image Source="http://i.imgur.com/3M0Xzca.png" Scale="1" /> -->
+<StackLayout Padding="0,20,0,0" x:Name="StackPrincipal">
+
+  <!-- DELETAR 
+  <maps:Map WidthRequest="960" HeightRequest="100"
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street"
+            IsEnabled="True"
+            VerticalOptions="FillAndExpand"
+        />
+  DELETAR -->
+  
+  
+  
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
  
   <Label Text="Modelo" HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
@@ -24,7 +36,7 @@
   
   <Label Text="Cor"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
   <Entry HorizontalTextAlignment="Center"/>
-  
+
   <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnContinuarClicked"/>
   
 </StackLayout>
