@@ -22,10 +22,10 @@
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
  
   <Label Text="Modelo" Style="{StaticResource LabelPrimary}"/>
-  <Entry HorizontalTextAlignment="Center"></Entry>
+  <Entry x:Name="EntryModelo" HorizontalTextAlignment="Center"></Entry>
   
   <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
-  <Entry HorizontalTextAlignment="Center"/>
+  <Entry x:Name="EntryMarca" HorizontalTextAlignment="Center"/>
   
   <Label Text="Placa" Style="{StaticResource LabelPrimary}"/>
   <Entry x:Name="EntryPlaca" HorizontalTextAlignment="Center">
@@ -35,7 +35,7 @@
    </Entry>
   
   <Label Text="Cor" Style="{StaticResource LabelPrimary}"/>
-  <Entry HorizontalTextAlignment="Center"/>
+  <Entry x:Name="EntryCor" HorizontalTextAlignment="Center"/>
 
   <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked" VerticalOptions="EndAndExpand"/>
   

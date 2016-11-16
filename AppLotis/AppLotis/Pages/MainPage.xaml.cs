@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
 using AppLotis.Pages;
+using AppLotis.Singletons;
 using Xamarin.Forms.Maps;
 
 namespace AppLotis {
@@ -17,8 +18,8 @@ namespace AppLotis {
 
         async void OnContinuarClicked(object sender, EventArgs e) {
             //TODO: Retomar validação
-            //ValidarForm();
-            await Navigation.PushModalAsync(new SeleecionarLavagemPage());
+            ValidarForm();
+            //await Navigation.PushModalAsync(new SeleecionarLavagemPage());
         }
 
         async void ValidarForm() {
@@ -36,6 +37,7 @@ namespace AppLotis {
                 }
             }
             if (carregar) {
+                VeiculoSingleton.Iniciar(EntryPlaca.Text, EntryModelo.Text, EntryMarca.Text, EntryCor.Text);
                 await Navigation.PushModalAsync(new SeleecionarLavagemPage());
             } else {
                 await DisplayAlert("Erro", "Por favor, preencha todos os campos.", "Ok");

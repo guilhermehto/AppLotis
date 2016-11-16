@@ -12,8 +12,8 @@ namespace AppLotis.Pages {
             InitializeComponent();
         }
 
-        private void OnBtnContinuarClicked(object sender, EventArgs e) {
-            throw new NotImplementedException();
+        private async void OnBtnContinuarClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new CadastrarPage());
         }
     }
 }
