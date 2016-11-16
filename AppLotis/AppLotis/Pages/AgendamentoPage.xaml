@@ -8,19 +8,20 @@
     <DatePicker HorizontalOptions="Center" />
     
     <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Qual horário fica melhor para você?"/>
-    <TimePicker HorizontalOptions="Center" />
+    <TimePicker HorizontalOptions="Center" Format="hh:MM"/>
     
     
     <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro irá estar?" />
+    <Label x:Name="LabelEndereco" TextColor="#2C3E50" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Rua Albino Augusto Assmann, 50"/>
     
-    <maps:Map WidthRequest="320" HeightRequest="200"
+    <maps:Map WidthRequest="320" HeightRequest="150"
             x:Name="MapLocalizacao"
             IsShowingUser="False"
             MapType="Street"
             IsEnabled="True"
         />
 
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Não é o local correto?"/>
+    <Label TextColor="#2C3E50" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Não é o local correto?"/>
     
     <StackLayout Orientation="Horizontal">
       <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Cep: "/>

@@ -18,7 +18,11 @@ namespace AppLotis.Pages {
 
         protected override async void OnAppearing() {
             var locator = CrossGeolocator.Current;
+            Geocoder geocoder = new Geocoder();
             var posUsuario = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+            var enderecos = await geocoder.GetAddressesForPositionAsync(new Position(posUsuario.Latitude, posUsuario.Longitude));
+            var endereco = enderecos.FirstOrDefault();
+            LabelEndereco.Text = endereco.Substring(0, endereco.IndexOf('-'));
             MapLocalizacao.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(posUsuario.Latitude, posUsuario.Longitude), Distance.FromKilometers(1)));
             MapLocalizacao.Pins.Add(new Pin() {
                 Position = new Position(posUsuario.Latitude, posUsuario.Longitude),
@@ -38,6 +42,9 @@ namespace AppLotis.Pages {
             Geocoder geocoder = new Geocoder();
             var localizacoes = await geocoder.GetPositionsForAddressAsync(EntryCep.Text);
             if (localizacoes.Any()) {
+                var enderecos = await geocoder.GetAddressesForPositionAsync(new Position(localizacoes.FirstOrDefault().Latitude, localizacoes.FirstOrDefault().Longitude));
+                var endereco = enderecos.FirstOrDefault();
+                LabelEndereco.Text = endereco.Substring(0, endereco.IndexOf('-'));
                 MapLocalizacao.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(localizacoes.FirstOrDefault().Latitude, localizacoes.FirstOrDefault().Longitude), Distance.FromKilometers(1)));
                 MapLocalizacao.Pins.RemoveAt(0);
 
