@@ -20,12 +20,14 @@
   
   
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
+
+  <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
+  <Entry x:Name="EntryMarca" HorizontalTextAlignment="Center"/>
  
   <Label Text="Modelo" Style="{StaticResource LabelPrimary}"/>
   <Entry x:Name="EntryModelo" HorizontalTextAlignment="Center"></Entry>
   
-  <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
-  <Entry x:Name="EntryMarca" HorizontalTextAlignment="Center"/>
+  
   
   <Label Text="Placa" Style="{StaticResource LabelPrimary}"/>
   <Entry x:Name="EntryPlaca" HorizontalTextAlignment="Center">

@@ -19,5 +19,8 @@ namespace AppLotis.Singletons {
         public static string Endereco { get; set; }
         public static decimal Latitude { get; set; }
         public static decimal Longitude { get; set; }
+
+        //TODO: REMOVER
+        public static int ValorEmReais { get; set; }
     }
 }

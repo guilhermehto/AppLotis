@@ -8,7 +8,7 @@
     <DatePicker HorizontalOptions="Center" />
     
     <Label Text="Qual horário fica melhor para você?" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <TimePicker HorizontalOptions="Center" Format="hh:MM"/>
+    <TimePicker HorizontalOptions="Center"/>
     
     
     <Label Text="Onde seu carro irá estar?" FontSize="20" Style="{StaticResource LabelPrimary}"  />

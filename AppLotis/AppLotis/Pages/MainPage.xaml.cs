@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
 using AppLotis.Pages;
+using AppLotis.Rest;
 using AppLotis.Singletons;
 using Xamarin.Forms.Maps;
 
@@ -14,6 +15,13 @@ namespace AppLotis {
     public partial class MainPage : ContentPage {
         public MainPage() {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing() {
+            var restAdicional = new RestAdicional();
+            var restTipoLavagem = new RestTipoLavagem();
+            ListasSingleton.Adicionais = await restAdicional.LoadAdicionais();
+            ListasSingleton.TipoLavagens = await restTipoLavagem.LoadTipos();
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {

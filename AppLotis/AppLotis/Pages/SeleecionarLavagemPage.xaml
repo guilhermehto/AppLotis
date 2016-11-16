@@ -7,23 +7,14 @@
     
     
     <Label Text="Tipo de Lavagem" FontSize="20" Style="{StaticResource LabelPrimary}"/>
-    <Picker x:Name="SpinnerLavagens" SelectedIndex="1">
-      <Picker.Items>
-        <x:String>Lavagem Expressa</x:String>
-        <x:String>Lavagem Completa</x:String>
-      </Picker.Items>
-    </Picker>
+    <Picker x:Name="PickerLavagens" />
+    <Label x:Name="LabelDescricao" FontSize="15" Style="{StaticResource LabelPrimary}" />
 
     <Label Text="Adicionais" FontSize="20" Style="{StaticResource LabelPrimary}" />
 
 
     <!-- TODO: Mostrar opções baseado na lavagem selecionada-->
-    <Picker x:Name="SpinnerAdicionais">
-      <Picker.Items>
-        <x:String>Silicone para interior</x:String>
-        <x:String>Cristalizador de vidros</x:String>
-      </Picker.Items>
-    </Picker>
+    <Picker x:Name="PickerAdicionais" />
     
     <Button Text="Selecionar Adicional" Clicked="OnAdicionarClicked"/>
     
@@ -33,8 +24,8 @@
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Adicional}" />
-                <Label Text="{Binding Valor}" />
+                <Label Text="{Binding Nome}" />
+                <Label Text="{Binding ValorEmReais}" />
                 <Button Text="Remover" HorizontalOptions="EndAndExpand" Clicked="OnRemoverClicked"/>
               </StackLayout>
             </StackLayout>
@@ -43,7 +34,7 @@
       </ListView.ItemTemplate>
     </ListView>
     
-    <Label Text="Preço: R$00,00" FontSize="25" Style="{StaticResource LabelPrimary}"/>
+    <Label x:Name="LabelValorTotal" Text="Preço: R$00,00" FontSize="25" Style="{StaticResource LabelPrimary}"/>
 
     <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked"/>
 
