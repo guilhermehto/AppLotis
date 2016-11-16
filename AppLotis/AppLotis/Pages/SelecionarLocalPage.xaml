@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="AppLotis.Pages.SelecionarLocalPage">
-  <StackLayout VerticalOptions="StartAndExpand" Padding="30">
+  <StackLayout Padding ="20,20,20,0" Orientation="Vertical">
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro está?"/>
+
     <maps:Map WidthRequest="320" HeightRequest="200"
             x:Name="MyMap"
             IsShowingUser="true"

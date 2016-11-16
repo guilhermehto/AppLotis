@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="AppLotis.Pages.AgendamentoPage">
+  <StackLayout Padding="20,20,20,0" Orientation="Vertical">
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Que dia você quer sua lavagem?"/>
+    <DatePicker HorizontalOptions="Center" />
+    
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Qual horário fica melhor para você?"/>
+    <TimePicker HorizontalOptions="Center" />
+    
+    
+<Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro irá estar?" />
+    
+    <maps:Map WidthRequest="320" HeightRequest="200"
+            x:Name="MapLocalizacao"
+            IsShowingUser="true"
+            MapType="Street"
+            IsEnabled="True"
+        />
+    
+  </StackLayout>
+</ContentPage>

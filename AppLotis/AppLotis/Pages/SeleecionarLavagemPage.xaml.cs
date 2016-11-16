@@ -52,7 +52,7 @@ namespace AppLotis.Pages {
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {
-            await Navigation.PushModalAsync(new SelecionarLocalPage());
+            await Navigation.PushModalAsync(new AgendamentoPage());
         }
     }
 }

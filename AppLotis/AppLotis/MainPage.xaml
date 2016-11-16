@@ -5,7 +5,7 @@
              xmlns:validation="clr-namespace:AppLotis.Validation;assembly=AppLotis"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="AppLotis.MainPage">
-<StackLayout Padding="0,20,0,0" x:Name="StackPrincipal">
+<StackLayout Padding="20,20,20,0" x:Name="StackPrincipal">
 
   <!-- DELETAR 
   <maps:Map WidthRequest="960" HeightRequest="100"

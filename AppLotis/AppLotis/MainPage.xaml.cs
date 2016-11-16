@@ -16,15 +16,20 @@ namespace AppLotis {
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {
+            //TODO: Retomar validação
+            //ValidarForm();
+            await Navigation.PushModalAsync(new SeleecionarLavagemPage());
+        }
+
+        async void ValidarForm() {
             bool carregar = true;
             foreach (var child in StackPrincipal.Children) {
                 if (child.GetType() == typeof(Entry)) {
-                    if (String.IsNullOrEmpty(((Entry) child).Text)) {
+                    if (String.IsNullOrEmpty(((Entry)child).Text)) {
                         carregar = false;
                         ((Entry)child).Placeholder = "Preencher";
                         ((Entry)child).PlaceholderColor = Color.Red;
-                    }
-                    else if(((Entry)child).BackgroundColor == Color.Red) {
+                    } else if (((Entry)child).BackgroundColor == Color.Red) {
                         ((Entry)child).Placeholder = "Erro";
                         ((Entry)child).PlaceholderColor = Color.Red;
                     }
@@ -32,8 +37,7 @@ namespace AppLotis {
             }
             if (carregar) {
                 await Navigation.PushModalAsync(new SeleecionarLavagemPage());
-            }
-            else {
+            } else {
                 await DisplayAlert("Erro", "Por favor, preencha todos os campos.", "Ok");
             }
         }
