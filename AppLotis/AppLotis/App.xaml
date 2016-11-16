@@ -4,7 +4,42 @@
              x:Class="AppLotis.App">
   <Application.Resources>
 
-    <!-- Application resource dictionary -->
+    <ResourceDictionary>
+
+      <!-- BUTTONS -->
+      
+      <Style x:Key="BtnPrimary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#ED0999" />
+        <Setter Property="BorderRadius" Value="20" />
+        <Setter Property="BorderColor" Value="#000000" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+      </Style>
+
+      <Style x:Key="BtnDefault" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#2C3E50" />
+        <Setter Property="BorderRadius" Value="20" />
+        <Setter Property="BorderColor" Value="#000000" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+      </Style>
+      
+      <!-- BUTTONS -->
+
+      <!-- LABELS -->
+      
+      <Style x:Key="LabelPrimary" TargetType="Label">
+        <Setter Property="TextColor" Value="#2C3E50" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="FontSize" Value="20" />
+      </Style>
+     
+      <!-- LABELS -->
+
+
+    </ResourceDictionary>
 
   </Application.Resources>
 </Application>

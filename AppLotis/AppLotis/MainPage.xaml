@@ -21,23 +21,23 @@
   
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
  
-  <Label Text="Modelo" HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Label Text="Modelo" Style="{StaticResource LabelPrimary}"/>
   <Entry HorizontalTextAlignment="Center"></Entry>
   
-  <Label Text="Marca"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
   <Entry HorizontalTextAlignment="Center"/>
   
-  <Label Text="Placa"    HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Label Text="Placa" Style="{StaticResource LabelPrimary}"/>
   <Entry x:Name="EntryPlaca" HorizontalTextAlignment="Center">
     <Entry.Behaviors>
       <validation:PlacaValidatorBehavior /> 
     </Entry.Behaviors> 
    </Entry>
   
-  <Label Text="Cor"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
+  <Label Text="Cor" Style="{StaticResource LabelPrimary}"/>
   <Entry HorizontalTextAlignment="Center"/>
 
-  <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" VerticalOptions="EndAndExpand" Clicked="OnContinuarClicked"/>
+  <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked" VerticalOptions="EndAndExpand"/>
   
 </StackLayout>
 

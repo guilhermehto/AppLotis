@@ -30,8 +30,8 @@ namespace AppLotis.Pages {
             });
         }
 
-        private void OnContinuarClicked(object sender, EventArgs e) {
-            throw new NotImplementedException();
+        private async void OnContinuarClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new PagamentoPage());
         }
 
         private async void OnBtnPesquisarClicked(object sender, EventArgs e) {

@@ -44,6 +44,12 @@
     <Compile Include="Pages\AgendamentoPage.xaml.cs">
       <DependentUpon>AgendamentoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BasePage.xaml.cs">
+      <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagamentoPage.xaml.cs">
+      <DependentUpon>PagamentoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SelecionarLocalPage.xaml.cs">
       <DependentUpon>SelecionarLocalPage.xaml</DependentUpon>
     </Compile>
@@ -108,6 +114,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\AgendamentoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PagamentoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\BasePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

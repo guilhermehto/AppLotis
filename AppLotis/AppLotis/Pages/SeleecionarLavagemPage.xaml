@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLotis.Pages.SeleecionarLavagemPage">
   <StackLayout Padding="20,20,20,0">
-    <Label TextColor="#2C3E50" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Agora selecione o tipo de lavagem" />
+    <Label Text="Agora selecione o tipo de lavagem" FontSize="30" Style="{StaticResource LabelPrimary}"/>
     
     
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Tipo de Lavagem"/>
+    <Label Text="Tipo de Lavagem" FontSize="20" Style="{StaticResource LabelPrimary}"/>
     <Picker x:Name="SpinnerLavagens" SelectedIndex="1">
       <Picker.Items>
         <x:String>Lavagem Expressa</x:String>
@@ -14,7 +14,7 @@
       </Picker.Items>
     </Picker>
 
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Adicionais"/>
+    <Label Text="Adicionais" FontSize="20" Style="{StaticResource LabelPrimary}" />
 
 
     <!-- TODO: Mostrar opções baseado na lavagem selecionada-->
@@ -43,9 +43,9 @@
       </ListView.ItemTemplate>
     </ListView>
     
-    <Label TextColor="#2C3E50" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Preço: R$00,00" />
+    <Label Text="Preço: R$00,00" FontSize="25" Style="{StaticResource LabelPrimary}"/>
 
-    <Button TextColor="#FFFFFF" BackgroundColor="#2C3E50" Text="Continuar" Clicked="OnContinuarClicked"/>
+    <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked"/>
 
 
   </StackLayout>

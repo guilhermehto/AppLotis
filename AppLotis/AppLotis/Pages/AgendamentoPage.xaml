@@ -4,15 +4,15 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="AppLotis.Pages.AgendamentoPage">
   <StackLayout Padding="20,20,20,0" Orientation="Vertical">
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Que dia você quer sua lavagem?"/>
+    <Label Text="Que dia você quer sua lavagem?" FontSize="20" Style="{StaticResource LabelPrimary}" />
     <DatePicker HorizontalOptions="Center" />
     
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Qual horário fica melhor para você?"/>
+    <Label Text="Qual horário fica melhor para você?" FontSize="20" Style="{StaticResource LabelPrimary}" />
     <TimePicker HorizontalOptions="Center" Format="hh:MM"/>
     
     
-    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro irá estar?" />
-    <Label x:Name="LabelEndereco" TextColor="#2C3E50" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Rua Albino Augusto Assmann, 50"/>
+    <Label Text="Onde seu carro irá estar?" FontSize="20" Style="{StaticResource LabelPrimary}"  />
+    <Label x:Name="LabelEndereco" Text="Rua Albino Augusto Assmann, 50" FontSize="15" Style="{StaticResource LabelPrimary}"/>
     
     <maps:Map WidthRequest="320" HeightRequest="150"
             x:Name="MapLocalizacao"
@@ -21,16 +21,16 @@
             IsEnabled="True"
         />
 
-    <Label TextColor="#2C3E50" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Não é o local correto?"/>
+    <Label Text="Não é o local correto?" FontSize="15" Style="{StaticResource LabelPrimary}" />
     
     <StackLayout Orientation="Horizontal">
-      <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Cep: "/>
+      <Label Text="Cep: " FontSize="20" Style="{StaticResource LabelPrimary}" />
       <Entry x:Name="EntryCep" WidthRequest="150" Keyboard="Numeric" Placeholder="11222333"/>
-      <Button Text="Pesquisar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnBtnPesquisarClicked"/>
+      <Button Text="Pesquisar" Style="{StaticResource BtnDefault}" Clicked="OnBtnPesquisarClicked"/>
     </StackLayout>
     
     
-    <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnContinuarClicked"/>
+    <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked"/>
     
     
   </StackLayout>
