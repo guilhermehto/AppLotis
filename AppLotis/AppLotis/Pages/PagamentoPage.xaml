@@ -5,8 +5,22 @@
   
   <StackLayout Padding="20,20,20,0">
     <Label Text="Pagamento" FontSize="30" Style="{StaticResource LabelPrimary}"/>
+    <Label Text="Preço total: R$50,00" FontSize="30" Style="{StaticResource LabelPrimary}" />
+
+    <Label Text="Precisa de troco? Pra quanto?" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Entry x:Name="EntryTroco" HorizontalTextAlignment="Center" Placeholder="70" Keyboard="Numeric"/>
+
+    <Label Text="Onde iremos receber o dinheiro?" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Entry x:Name="EntryLocalDePagamento" HorizontalTextAlignment="Center" Placeholder="Na loja do lado do estacionamento" Keyboard="Text"/>
+
+    <Label Text="Qual seu telefone?" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Entry x:Name="EntryTelefone" HorizontalTextAlignment="Center" Placeholder="0011112222" Keyboard="Telephone"/>
+
+    <Label Text="Nome completo:" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Entry x:Name="EntryNome" HorizontalTextAlignment="Center" Placeholder="João Pedro Henrique" Keyboard="Text"/>
     
     
+    <Button Text="Continuar" VerticalOptions="EndAndExpand" Style="{StaticResource BtnPrimary}" Clicked="OnBtnContinuarClicked"/>
     
   </StackLayout>
 </ContentPage>

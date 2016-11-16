@@ -11,5 +11,9 @@ namespace AppLotis.Pages {
         public PagamentoPage() {
             InitializeComponent();
         }
+
+        private void OnBtnContinuarClicked(object sender, EventArgs e) {
+            throw new NotImplementedException();
+        }
     }
 }
