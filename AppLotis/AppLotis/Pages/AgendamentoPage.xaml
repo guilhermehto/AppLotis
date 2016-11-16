@@ -11,14 +11,26 @@
     <TimePicker HorizontalOptions="Center" />
     
     
-<Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro irá estar?" />
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Onde seu carro irá estar?" />
     
     <maps:Map WidthRequest="320" HeightRequest="200"
             x:Name="MapLocalizacao"
-            IsShowingUser="true"
+            IsShowingUser="False"
             MapType="Street"
             IsEnabled="True"
         />
+
+    <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Não é o local correto?"/>
+    
+    <StackLayout Orientation="Horizontal">
+      <Label TextColor="#2C3E50" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Fill" Text="Cep: "/>
+      <Entry x:Name="EntryCep" WidthRequest="150" Keyboard="Numeric" Placeholder="11222333"/>
+      <Button Text="Pesquisar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnBtnPesquisarClicked"/>
+    </StackLayout>
+    
+    
+    <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnContinuarClicked"/>
+    
     
   </StackLayout>
 </ContentPage>

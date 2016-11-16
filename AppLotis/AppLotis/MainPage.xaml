@@ -37,7 +37,7 @@
   <Label Text="Cor"  HorizontalOptions="Center" VerticalOptions="Fill" FontSize="20" TextColor="#2C3E50"/>
   <Entry HorizontalTextAlignment="Center"/>
 
-  <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" Clicked="OnContinuarClicked"/>
+  <Button Text="Continuar" BackgroundColor="#2C3E50" TextColor="#FFFFFF" VerticalOptions="EndAndExpand" Clicked="OnContinuarClicked"/>
   
 </StackLayout>
 
