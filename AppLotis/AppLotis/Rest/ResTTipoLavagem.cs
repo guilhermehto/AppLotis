@@ -17,11 +17,15 @@ namespace AppLotis.Rest {
         }
 
         public async Task<List<TipoLavagemDto>> LoadTipos() {
-            var response = await client.GetAsync(URL);
-            if (response.IsSuccessStatusCode) {
-                var content = await response.Content.ReadAsStringAsync();
-                var adicionais = JsonConvert.DeserializeObject<List<TipoLavagemDto>>(content);
-                return adicionais;
+            try {
+                var response = await client.GetAsync(URL);
+                if (response.IsSuccessStatusCode) {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var adicionais = JsonConvert.DeserializeObject<List<TipoLavagemDto>>(content);
+                    return adicionais;
+                }
+            } catch (Exception e) {
+                return null;
             }
 
             return null;

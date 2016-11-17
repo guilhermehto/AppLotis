@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using AppLotis.Pages;
 using Xamarin.Forms;
 
 namespace AppLotis {
@@ -11,7 +11,8 @@ namespace AppLotis {
 
             InitializeComponent();
 
-            MainPage = new AppLotis.MainPage();
+            //MainPage = new AppLotis.MainPage();
+            MainPage = new IndexPage();
         }
 
         protected override void OnStart() {

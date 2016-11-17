@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Helpers;
 using AppLotis.Singletons;
 using AppLotis.ViewModels;
 using Xamarin.Forms;
@@ -12,24 +13,31 @@ using Xamarin.Forms;
 namespace AppLotis.Pages {
     public partial class SeleecionarLavagemPage : ContentPage {
         private ObservableCollection<AdicionalDto> adicionados;
+        private bool SemInternet = false;
         public SeleecionarLavagemPage() {
             InitializeComponent();
             adicionados = new ObservableCollection<AdicionalDto>();
             ListViewAdicionais.ItemsSource = adicionados;
-            foreach (var adicional in ListasSingleton.Adicionais) {
-                PickerAdicionais.Items.Add(adicional.Nome);
-            }
+            try {
+                foreach (var adicional in ListasSingleton.Adicionais) {
+                    PickerAdicionais.Items.Add(adicional.Nome);
+                }
 
-            foreach (var tipo in ListasSingleton.TipoLavagens) {
-                PickerLavagens.Items.Add(tipo.Nome);
+                foreach (var tipo in ListasSingleton.TipoLavagens) {
+                    PickerLavagens.Items.Add(tipo.Nome);
+                }
+                PickerAdicionais.SelectedIndex = 0;
+                PickerLavagens.SelectedIndex = 0;
+                PickerLavagens.SelectedIndexChanged += OnLavagensSelectedChanged;
+                LabelDescricao.Text = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Descricao;
+                LabelValorTotal.Text = "Valor total: R$" +
+                                       ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais +
+                                       ",00";
+            } catch (Exception e) {
+                DisplayAlert("Erro", MensagensErro.SEM_INTERNET, "Ok");
+                SemInternet = true;
             }
-            PickerAdicionais.SelectedIndex = 0;
-            PickerLavagens.SelectedIndex = 0;
-            PickerLavagens.SelectedIndexChanged += OnLavagensSelectedChanged;
-            LabelDescricao.Text = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Descricao;
-            LabelValorTotal.Text = "Valor total: R$" +
-                                   ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais +
-                                   ",00";
+            
         }
 
         private void OnAdicionarClicked(object sender, EventArgs e) {
@@ -62,7 +70,12 @@ namespace AppLotis.Pages {
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {
-            await Navigation.PushModalAsync(new AgendamentoPage());
+            if (!SemInternet) {
+                await Navigation.PushModalAsync(new AgendamentoPage());
+            }
+            else {
+                await DisplayAlert("Erro", MensagensErro.SEM_INTERNET, "Ok");
+            }
         }
 
         private void OnLavagensSelectedChanged(object sender, EventArgs e) {

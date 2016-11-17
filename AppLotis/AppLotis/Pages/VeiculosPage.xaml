@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLotis.Pages.VeiculosPage">
+
+  <StackLayout Padding="20,20,20,0">
+    <Label Text="Veículos" FontSize="35" Style="{StaticResource LabelPrimary}" />
+    <ListView x:Name="ListVeiculos">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Vertical">
+                <Label Text="{Binding Marca}" Style="{StaticResource LabelPrimary}"/>
+                <Label Text="{Binding Modelo}" Style="{StaticResource LabelPrimary}"/>
+                <Label Text="{Binding Cor}" Style="{StaticResource LabelPrimary}"/>
+              </StackLayout>
+              <Label Text="{Binding Placa}" FontSize="30" Style="{StaticResource LabelPrimary}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
+    
+    
+    
+    
+    <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/>
+  </StackLayout>
+  
+</ContentPage>
