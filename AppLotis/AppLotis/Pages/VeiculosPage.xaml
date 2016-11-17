@@ -5,15 +5,15 @@
 
   <StackLayout Padding="20,20,20,0">
     <Label Text="Veículos" FontSize="35" Style="{StaticResource LabelPrimary}" />
-    <ListView x:Name="ListVeiculos">
+    <ListView x:Name="ListVeiculos" RowHeight="80">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Vertical">
-              <StackLayout Orientation="Vertical">
-                <Label Text="{Binding Marca}" Style="{StaticResource LabelPrimary}"/>
-                <Label Text="{Binding Modelo}" Style="{StaticResource LabelPrimary}"/>
-                <Label Text="{Binding Cor}" Style="{StaticResource LabelPrimary}"/>
+              <StackLayout Orientation="Horizontal">
+                <Label FontSize="20" Text="{Binding Marca}" Style="{StaticResource LabelPrimary}" HorizontalOptions="Start"/>
+                <Label FontSize="20" Text="{Binding Modelo}" Style="{StaticResource LabelPrimary}" HorizontalOptions="CenterAndExpand"/>
+                <Label FontSize="20" Text="{Binding Cor}" Style="{StaticResource LabelPrimary}" HorizontalOptions="End"/>
               </StackLayout>
               <Label Text="{Binding Placa}" FontSize="30" Style="{StaticResource LabelPrimary}"/>
             </StackLayout>
@@ -21,10 +21,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    
-    
-    
-    
     
     <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/>
   </StackLayout>
