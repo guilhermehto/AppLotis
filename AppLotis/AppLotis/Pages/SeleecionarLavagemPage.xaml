@@ -16,19 +16,17 @@
     <!-- TODO: Mostrar opções baseado na lavagem selecionada-->
     <Picker x:Name="PickerAdicionais" />
     
-    <Button Text="Selecionar Adicional" Clicked="OnAdicionarClicked"/>
+    <Button Text="Selecionar Adicional" Clicked="OnAdicionarClicked" Style="{StaticResource BtnDefault}"/>
     
     <ListView x:Name="ListViewAdicionais">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
               <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Nome}" />
-                <Label Text="{Binding ValorEmReais}" />
-                <Button Text="Remover" HorizontalOptions="EndAndExpand" Clicked="OnRemoverClicked"/>
+                <Label Text="{Binding Nome}"  FontSize="20" Style="{StaticResource LabelPrimary}" VerticalOptions="Center"/>
+                <Label Text="{Binding ValorEmReais, StringFormat='R{0:C}'}" FontSize="20" Style="{StaticResource LabelPrimary}" VerticalOptions="Center"/>
+                <Button Text="Remover" HorizontalOptions="EndAndExpand" Clicked="OnRemoverClicked" Style="{StaticResource BtnDefault}"/>
               </StackLayout>
-            </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>

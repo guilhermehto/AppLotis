@@ -14,6 +14,7 @@ namespace AppLotis.Pages {
     public partial class SeleecionarLavagemPage : ContentPage {
         private ObservableCollection<AdicionalDto> adicionados;
         private bool SemInternet = false;
+        private int IndexLavagemAntigo = 0;
         public SeleecionarLavagemPage() {
             InitializeComponent();
             adicionados = new ObservableCollection<AdicionalDto>();
@@ -29,10 +30,10 @@ namespace AppLotis.Pages {
                 PickerAdicionais.SelectedIndex = 0;
                 PickerLavagens.SelectedIndex = 0;
                 PickerLavagens.SelectedIndexChanged += OnLavagensSelectedChanged;
+                LavagemSingleton.ValorEmReais =
+                    ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
                 LabelDescricao.Text = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Descricao;
-                LabelValorTotal.Text = "Valor total: R$" +
-                                       ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais +
-                                       ",00";
+                UpdateTextoValorTotal();
             } catch (Exception e) {
                 DisplayAlert("Erro", MensagensErro.SEM_INTERNET, "Ok");
                 SemInternet = true;
@@ -52,6 +53,8 @@ namespace AppLotis.Pages {
             }
             if (!possuiIgual) {
                 adicionados.Add(selecionadoAdd);
+                LavagemSingleton.ValorEmReais += selecionadoAdd.ValorEmReais;
+                UpdateTextoValorTotal();
             }
         }
 
@@ -63,6 +66,9 @@ namespace AppLotis.Pages {
             foreach (var a in adicionados) {
                 if (a.Nome == adicional.Text) {
                     adicionados.RemoveAt(index);
+                    LavagemSingleton.ValorEmReais -= a.ValorEmReais;
+                    LavagemSingleton.TipoLavagemId = a.Id;
+                    UpdateTextoValorTotal();
                     break;
                 }
                 index++;
@@ -83,6 +89,18 @@ namespace AppLotis.Pages {
             LabelValorTotal.Text = "Valor total: R$" +
                                    ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais +
                                    ",00";
+            LavagemSingleton.ValorEmReais -=
+                ListasSingleton.TipoLavagens.ElementAt(IndexLavagemAntigo).ValorEmReais;
+            LavagemSingleton.ValorEmReais +=
+                ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
+            IndexLavagemAntigo = PickerLavagens.SelectedIndex;
+            UpdateTextoValorTotal();
+
+
+        }
+
+        private void UpdateTextoValorTotal() {
+            LabelValorTotal.Text = "Valor total: R$" + LavagemSingleton.ValorEmReais + ",00";
         }
     }
 }

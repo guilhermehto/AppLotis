@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="Dtos\AdicionalDto.cs" />
     <Compile Include="Dtos\TipoLavagemDto.cs" />
+    <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="Dtos\VeiculoDto.cs" />
     <Compile Include="Helpers\MensagensErro.cs" />
     <Compile Include="Pages\ConfiguracoesPage.xaml.cs">
@@ -78,12 +79,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rest\RestAdicional.cs" />
     <Compile Include="Rest\RestTipoLavagem.cs" />
+    <Compile Include="Rest\UsuarioRest.cs" />
     <Compile Include="Singletons\LavagemSingleton.cs" />
     <Compile Include="Singletons\ListasSingleton.cs" />
     <Compile Include="Singletons\UsuarioSingleton.cs" />
     <Compile Include="Singletons\VeiculoSingleton.cs" />
     <Compile Include="Validation\EmailValidatorBehavior.cs" />
     <Compile Include="ViewModels\AdicionaisViewModel.cs" />
+    <Compile Include="ViewModels\RegistrarUsuarioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">

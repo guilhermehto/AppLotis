@@ -12,10 +12,10 @@ namespace AppLotis.Pages {
             InitializeComponent();
             
         }
-
-        protected override void OnAppearing() {
+        
+        protected override async void OnAppearing() {
             var sourceVEiculos = new List<VeiculoDto>();
-            for (int i = 0; i < 50; i++) {
+            for (int i = 0; i < 5; i++) {
                 var veiculo = new VeiculoDto {
                     Placa = $"ABC - {i}{i}{i}{i}",
                     Modelo = "Fiesta",

@@ -5,20 +5,20 @@
   
   <StackLayout Padding="20,20,20,0" Orientation="Vertical">
     <Label Text="Finalize seu cadastro" FontSize="30" Style="{StaticResource LabelPrimary}" />
-    
-    
+
+
     <Label Text="E-mail" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <Entry Placeholder="email@exemplo.com" Keyboard="Email" HorizontalTextAlignment="Center"/>
+    <Entry x:Name="EntryEmail" Placeholder="email@exemplo.com" Keyboard="Email" HorizontalTextAlignment="Center"/>
 
     <Label Text="Senha" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <Entry Placeholder="••••••" IsPassword="True" HorizontalTextAlignment="Center"/>
+    <Entry x:Name="EntrySenha" Placeholder="••••••" IsPassword="True" HorizontalTextAlignment="Center"/>
 
     <Label Text="Confimar Senha" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <Entry Placeholder="••••••" IsPassword="True" HorizontalTextAlignment="Center"/>
+    <Entry x:Name="EntryConfirmarSenha" Placeholder="••••••" IsPassword="True" HorizontalTextAlignment="Center"/>
 
-    <Label Text="*Assim que você confirmar seu cadastro, a lavagem será confirmada." FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Label Text="*Assim que você finalizar seu cadastro, a lavagem será confirmada." FontSize="20" Style="{StaticResource LabelPrimary}" />
 
-    <Button Text="Finalizar" Style="{StaticResource BtnPrimary}" VerticalOptions="EndAndExpand"/>
+    <Button Text="Finalizar" Style="{StaticResource BtnPrimary}" VerticalOptions="EndAndExpand" Clicked="OnBtnFinalizarClicked"/>
     
   </StackLayout>
   

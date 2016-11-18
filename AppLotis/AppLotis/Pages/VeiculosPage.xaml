@@ -5,6 +5,7 @@
 
   <StackLayout Padding="20,20,20,0">
     <Label Text="Veículos" FontSize="35" Style="{StaticResource LabelPrimary}" />
+
     <ListView x:Name="ListVeiculos" RowHeight="80">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -22,7 +23,8 @@
       </ListView.ItemTemplate>
     </ListView>
     
-    <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/>
+    <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/> 
+
   </StackLayout>
   
 </ContentPage>

@@ -5,11 +5,11 @@
              x:Class="AppLotis.Pages.AgendamentoPage">
   <StackLayout Padding="20,20,20,0" Orientation="Vertical">
     <Label Text="Que dia você quer sua lavagem?" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <DatePicker HorizontalOptions="Center" />
+    <DatePicker x:Name="DatePickerDiaDaLavagem" HorizontalOptions="Center" />
     
     <Label Text="Qual horário fica melhor para você?" FontSize="20" Style="{StaticResource LabelPrimary}" />
-    <TimePicker HorizontalOptions="Center"/>
-    
+    <Slider x:Name="SliderHorario" Maximum="16" Minimum="9"/>
+    <Label x:Name="LabelHorario" Text="Horário: " FontSize="20" Style="{StaticResource LabelPrimary}" />
     
     <Label Text="Onde seu carro irá estar?" FontSize="20" Style="{StaticResource LabelPrimary}"  />
     <Label x:Name="LabelEndereco" Text="Rua Albino Augusto Assmann, 50" FontSize="15" Style="{StaticResource LabelPrimary}"/>

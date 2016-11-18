@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppLotis.Singletons {
     public static class UsuarioSingleton {
+
         public static string Nome { get; set; }
         public static string Senha { get; set; }
         public static string Email { get; set; }

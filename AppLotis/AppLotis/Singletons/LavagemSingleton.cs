@@ -15,12 +15,15 @@ namespace AppLotis.Singletons {
         public static int TipoLavagemId { get; set; }
 
         public static string Cidade { get; set; }
-
         public static string Endereco { get; set; }
-        public static decimal Latitude { get; set; }
-        public static decimal Longitude { get; set; }
+        public static double Latitude { get; set; }
+        public static double Longitude { get; set; }
 
-        //TODO: REMOVER
-        public static int ValorEmReais { get; set; }
+        public static float ValorEmReais { get; set; }
+        public static float TrocoEmReais { get; set; }
+        public static string LocalDeRecebimento { get; set; }
+
+        public static DateTime DiaHorario { get; set; }
+
     }
 }

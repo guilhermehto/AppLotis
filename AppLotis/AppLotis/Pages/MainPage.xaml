@@ -7,18 +7,6 @@
              x:Class="AppLotis.MainPage">
 <StackLayout Padding="20,20,20,0" x:Name="StackPrincipal">
 
-  <!-- DELETAR 
-  <maps:Map WidthRequest="960" HeightRequest="100"
-            x:Name="MyMap"
-            IsShowingUser="true"
-            MapType="Street"
-            IsEnabled="True"
-            VerticalOptions="FillAndExpand"
-        />
-  DELETAR -->
-  
-  
-  
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
 
   <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>

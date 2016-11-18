@@ -11,8 +11,8 @@ namespace AppLotis {
 
             InitializeComponent();
 
-            //MainPage = new AppLotis.MainPage();
-            MainPage = new IndexPage();
+            MainPage = new AppLotis.MainPage();
+            //MainPage = new IndexPage();
         }
 
         protected override void OnStart() {
