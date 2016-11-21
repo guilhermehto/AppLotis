@@ -22,15 +22,23 @@ namespace AppLotis {
             var restTipoLavagem = new RestTipoLavagem();
             ListasSingleton.Adicionais = await restAdicional.LoadAdicionais();
             ListasSingleton.TipoLavagens = await restTipoLavagem.LoadTipos();
+            foreach (var m in ListaMarcas.Marcas) {
+                PickerMarcas.Items.Add(m);
+            }
+            PickerMarcas.SelectedIndex = 0;
+
+            foreach (var c in ListaCores.Cores) {
+                PickerCores.Items.Add(c);
+            }
+            PickerCores.SelectedIndex = 0;
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {
-            //TODO: Retomar validação
-            ValidarForm();
+            await ValidarForm();
             //await Navigation.PushModalAsync(new SeleecionarLavagemPage());
         }
 
-        async void ValidarForm() {
+        async Task ValidarForm() {
             bool carregar = true;
             foreach (var child in StackPrincipal.Children) {
                 if (child.GetType() == typeof(Entry)) {
@@ -45,11 +53,16 @@ namespace AppLotis {
                 }
             }
             if (carregar) {
-                VeiculoSingleton.Iniciar(EntryPlaca.Text, EntryModelo.Text, EntryMarca.Text, EntryCor.Text);
+                VeiculoSingleton.Iniciar(EntryPlaca.Text, 
+                    EntryModelo.Text, 
+                    PickerMarcas.Items.ElementAt(PickerMarcas.SelectedIndex), 
+                    PickerCores.Items.ElementAt(PickerCores.SelectedIndex));
+
                 await Navigation.PushModalAsync(new SeleecionarLavagemPage());
             } else {
                 await DisplayAlert("Erro", "Por favor, preencha todos os campos.", "Ok");
             }
         }
+
     }
 }

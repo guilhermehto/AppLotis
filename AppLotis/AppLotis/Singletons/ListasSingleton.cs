@@ -9,5 +9,6 @@ namespace AppLotis.Singletons {
     public static class ListasSingleton {
         public static IEnumerable<TipoLavagemDto> TipoLavagens { get; set; }
         public static IEnumerable<AdicionalDto> Adicionais { get; set; }
+        public static IEnumerable<MarcaDto> Marcas { get; set; }
     }
 }

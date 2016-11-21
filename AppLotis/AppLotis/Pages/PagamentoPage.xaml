@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLotis.Pages.PagamentoPage">
   
-  <StackLayout Padding="20,20,20,0">
+  <StackLayout Padding="20,20,20,0" x:Name="StackPrincipal">
     <Label Text="Pagamento" FontSize="30" Style="{StaticResource LabelPrimary}"/>
-    <Label Text="Preço total: R$50,00" FontSize="30" Style="{StaticResource LabelPrimary}" />
+    <Label x:Name="LabelValor" Text="Preço total: R$50,00" FontSize="30" Style="{StaticResource LabelPrimary}" />
 
     <Label Text="Precisa de troco? Pra quanto?" FontSize="20" Style="{StaticResource LabelPrimary}" />
     <Entry x:Name="EntryTroco" HorizontalTextAlignment="Center" Placeholder="70" Keyboard="Numeric"/>

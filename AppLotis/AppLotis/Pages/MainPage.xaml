@@ -10,7 +10,7 @@
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
 
   <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
-  <Entry x:Name="EntryMarca" HorizontalTextAlignment="Center"/>
+  <Picker x:Name="PickerMarcas"/>
  
   <Label Text="Modelo" Style="{StaticResource LabelPrimary}"/>
   <Entry x:Name="EntryModelo" HorizontalTextAlignment="Center"></Entry>
@@ -25,7 +25,7 @@
    </Entry>
   
   <Label Text="Cor" Style="{StaticResource LabelPrimary}"/>
-  <Entry x:Name="EntryCor" HorizontalTextAlignment="Center"/>
+  <Picker x:Name="PickerCores" />
 
   <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked" VerticalOptions="EndAndExpand"/>
   

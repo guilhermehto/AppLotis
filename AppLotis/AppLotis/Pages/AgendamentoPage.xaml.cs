@@ -10,7 +10,7 @@ using Plugin.Geolocator;
 using Xamarin.Forms.Maps;
 
 namespace AppLotis.Pages {
-    public partial class AgendamentoPage : ContentPage {
+    public partial class AgendamentoPage {
         private string EnderecoCompleto;
         public AgendamentoPage() {
             InitializeComponent();

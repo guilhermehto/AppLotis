@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppLotis.Dtos;
 using AppLotis.Helpers;
 using AppLotis.Rest;
 using AppLotis.Singletons;
 using AppLotis.ViewModels;
 using Xamarin.Forms;
+using static AppLotis.App;
 
 namespace AppLotis.Pages {
     public partial class CadastrarPage : ContentPage {
@@ -24,7 +26,7 @@ namespace AppLotis.Pages {
             }
             UsuarioSingleton.Senha = EntrySenha.Text;
             UsuarioSingleton.Email = EntryEmail.Text;
-            var api = new UsuarioRest();
+            var apiUsuario = new UsuarioRest();
             var model = new RegistrarUsuarioViewModel() {
                 Nome = UsuarioSingleton.Nome,
                 Funcao = "Usuario",
@@ -33,15 +35,25 @@ namespace AppLotis.Pages {
                 ConfirmPassword = UsuarioSingleton.Senha
             };
 
-            var resultado = await api.RegistrarNovoUsuario(model);
-            if (resultado) {
-                await DisplayAlert("Deu", "Certo", "Povo");
+            var apiVeiculo = new RestVeiculo();
+            var modelVeiculo = new VeiculoDto() {
+                Placa = VeiculoSingleton.Placa,
+                Cor = VeiculoSingleton.Cor,
+                Marca = VeiculoSingleton.Marca,
+                Modelo = VeiculoSingleton.Modelo
+            };
+
+            /*var resultadoVeiculo = await apiVeiculo.PostVeiculo(modelVeiculo);
+
+            var resultadoUsuario = await apiUsuario.RegistrarNovoUsuario(model);
+            if (resultadoUsuario && resultadoVeiculo) {
+                await Navigation.PushModalAsync(new IndexPage());
             } else {
-                await DisplayAlert("Deu", resultado.ToString(), "Povo");
-            }
+                await DisplayAlert("Deu", "Errado", "Povo");
+            }*/
 
-
-            //Navigation.PushModalAsync(new IndexPage());
+            var page = new IndexPage();
+            Application.Current.MainPage = page;
         }
     }
 }

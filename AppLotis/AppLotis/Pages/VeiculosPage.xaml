@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppLotis.Pages.VeiculosPage">
+             x:Class="AppLotis.Pages.VeiculosPage"
+             Title="Veículos">
 
   <StackLayout Padding="20,20,20,0">
     <Label Text="Veículos" FontSize="35" Style="{StaticResource LabelPrimary}" />
 
+    <!-- 
     <ListView x:Name="ListVeiculos" RowHeight="80">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -22,6 +24,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    -->
     
     <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/> 
 
