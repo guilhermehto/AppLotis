@@ -10,9 +10,10 @@ namespace AppLotis.Singletons {
     /// Utilizada apenas para a primeira lavagem do usuário, quando ele ainda não é cadastrado
     /// </summary>
     public static class LavagemSingleton {
-        public static int VeiculoId { get; set; }
 
+        public static int VeiculoId { get; set; }
         public static int TipoLavagemId { get; set; }
+        public static string UsuarioId { get; set; }
 
         public static string Cidade { get; set; }
         public static string Endereco { get; set; }

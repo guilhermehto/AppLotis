@@ -26,7 +26,7 @@ namespace AppLotis.Pages {
             }
             UsuarioSingleton.Senha = EntrySenha.Text;
             UsuarioSingleton.Email = EntryEmail.Text;
-            var apiUsuario = new UsuarioRest();
+            var apiUsuario = new RestUsuario();
             var model = new RegistrarUsuarioViewModel() {
                 Nome = UsuarioSingleton.Nome,
                 Funcao = "Usuario",
@@ -43,17 +43,20 @@ namespace AppLotis.Pages {
                 Modelo = VeiculoSingleton.Modelo
             };
 
-            /*var resultadoVeiculo = await apiVeiculo.PostVeiculo(modelVeiculo);
 
+            var resultadoVeiculo = await apiVeiculo.PostVeiculo(modelVeiculo);
             var resultadoUsuario = await apiUsuario.RegistrarNovoUsuario(model);
-            if (resultadoUsuario && resultadoVeiculo) {
-                await Navigation.PushModalAsync(new IndexPage());
-            } else {
-                await DisplayAlert("Deu", "Errado", "Povo");
-            }*/
 
-            var page = new IndexPage();
-            Application.Current.MainPage = page;
+
+            if (resultadoUsuario != null && resultadoVeiculo) {
+                var page = new IndexPage();
+                LavagemSingleton.UsuarioId = resultadoUsuario.Id;
+                Application.Current.MainPage = page;
+            } else {
+                await DisplayAlert("Erro", MensagensErro.ERRO_REST, "Ok");
+            }
+
+            
         }
     }
 }

@@ -18,10 +18,6 @@ namespace AppLotis {
         }
 
         protected override async void OnAppearing() {
-            var restAdicional = new RestAdicional();
-            var restTipoLavagem = new RestTipoLavagem();
-            ListasSingleton.Adicionais = await restAdicional.LoadAdicionais();
-            ListasSingleton.TipoLavagens = await restTipoLavagem.LoadTipos();
             foreach (var m in ListaMarcas.Marcas) {
                 PickerMarcas.Items.Add(m);
             }
@@ -31,6 +27,15 @@ namespace AppLotis {
                 PickerCores.Items.Add(c);
             }
             PickerCores.SelectedIndex = 0;
+
+            var apiAdicionais = new RestAdicional();
+            var apiTipos = new RestTipoLavagem();
+            var listaAdicionais = await apiAdicionais.LoadAdicionais();
+            var listaTipos = await apiTipos.LoadTipos();
+            ListasSingleton.Adicionais = listaAdicionais;
+            ListasSingleton.TipoLavagens = listaTipos;
+
+
         }
 
         async void OnContinuarClicked(object sender, EventArgs e) {

@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="Database\MarcaDatabase.cs" />
     <Compile Include="Dtos\AdicionalDto.cs" />
+    <Compile Include="Dtos\LavagemDto.cs" />
     <Compile Include="Dtos\MarcaDto.cs" />
     <Compile Include="Dtos\TipoLavagemDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
@@ -81,10 +82,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rest\RestAdicional.cs" />
+    <Compile Include="Rest\RestLavagem.cs" />
     <Compile Include="Rest\RestMarca.cs" />
     <Compile Include="Rest\RestTipoLavagem.cs" />
     <Compile Include="Rest\RestVeiculo.cs" />
-    <Compile Include="Rest\UsuarioRest.cs" />
+    <Compile Include="Rest\RestUsuario.cs" />
     <Compile Include="Singletons\LavagemSingleton.cs" />
     <Compile Include="Singletons\ListaCores.cs" />
     <Compile Include="Singletons\ListaMarcas.cs" />
