@@ -43,17 +43,37 @@ namespace AppLotis.Pages {
                 Modelo = VeiculoSingleton.Modelo
             };
 
-
             var resultadoVeiculo = await apiVeiculo.PostVeiculo(modelVeiculo);
             var resultadoUsuario = await apiUsuario.RegistrarNovoUsuario(model);
 
 
-            if (resultadoUsuario != null && resultadoVeiculo) {
+            var apiLavagem = new RestLavagem();
+
+            //TODO: Pegar a cidade dinamicamente
+            var modelLavagem = new LavagemDto() {
+                ValorEmReais = LavagemSingleton.ValorEmReais,
+                Longitude = LavagemSingleton.Longitude,
+                Latitude = LavagemSingleton.Latitude,
+                Cidade = "Santa Cruz do Sul",
+                DiaHorario = LavagemSingleton.DiaHorario,
+                Endereco = LavagemSingleton.Endereco,
+                LocalDeRecebimento = LavagemSingleton.LocalDeRecebimento,
+                TipoLavagemId = LavagemSingleton.TipoLavagemId,
+                TrocoEmReais = LavagemSingleton.TrocoEmReais,
+                UsuarioId = resultadoUsuario.Id,
+                VeiculoId = resultadoVeiculo.Id
+            };
+            var resultadoLavagem = await apiLavagem.PostLavagem(modelLavagem);
+
+            await DisplayAlert("Erro", resultadoLavagem, "Ok");
+
+
+            //TODO: Melhorar essas verificações
+            if (resultadoUsuario.Id != null && resultadoVeiculo.Cor != null && resultadoLavagem != null) {
                 var page = new IndexPage();
-                LavagemSingleton.UsuarioId = resultadoUsuario.Id;
                 Application.Current.MainPage = page;
             } else {
-                await DisplayAlert("Erro", MensagensErro.ERRO_REST, "Ok");
+                await DisplayAlert("Erro", resultadoLavagem, "Ok");
             }
 
             

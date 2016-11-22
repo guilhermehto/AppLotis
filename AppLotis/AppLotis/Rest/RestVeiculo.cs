@@ -17,17 +17,18 @@ namespace AppLotis.Rest {
             client = new HttpClient();
         }
 
-        public async Task<bool> PostVeiculo(VeiculoDto veiculo) {
+        public async Task<VeiculoDto> PostVeiculo(VeiculoDto veiculo) {
             try {
                 var json = JsonConvert.SerializeObject(veiculo);
                 var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
                 var resposta = await client.PostAsync(CRIAR_URL, conteudo);
+                var respostaConteudo = await resposta.Content.ReadAsStringAsync();
                 if (resposta.IsSuccessStatusCode) {
-                    return true;
+                    return JsonConvert.DeserializeObject<VeiculoDto>(respostaConteudo);
                 }
-                return false;
+                return null;
             } catch (Exception e) {
-                return false;
+                return null;
             }
         }
     }

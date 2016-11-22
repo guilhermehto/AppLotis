@@ -30,6 +30,8 @@ namespace AppLotis.Pages {
                 PickerAdicionais.SelectedIndex = 0;
                 PickerLavagens.SelectedIndex = 0;
                 PickerLavagens.SelectedIndexChanged += OnLavagensSelectedChanged;
+                LavagemSingleton.TipoLavagemId = 
+                    ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Id;
                 LavagemSingleton.ValorEmReais =
                     ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
                 LabelDescricao.Text = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Descricao;
@@ -67,7 +69,7 @@ namespace AppLotis.Pages {
                 if (a.Nome == adicional.Text) {
                     adicionados.RemoveAt(index);
                     LavagemSingleton.ValorEmReais -= a.ValorEmReais;
-                    LavagemSingleton.TipoLavagemId = a.Id;
+                    //LavagemSingleton.TipoLavagemId = a.Id;
                     UpdateTextoValorTotal();
                     break;
                 }
@@ -93,6 +95,7 @@ namespace AppLotis.Pages {
                 ListasSingleton.TipoLavagens.ElementAt(IndexLavagemAntigo).ValorEmReais;
             LavagemSingleton.ValorEmReais +=
                 ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
+            LavagemSingleton.TipoLavagemId = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Id;
             IndexLavagemAntigo = PickerLavagens.SelectedIndex;
             UpdateTextoValorTotal();
 

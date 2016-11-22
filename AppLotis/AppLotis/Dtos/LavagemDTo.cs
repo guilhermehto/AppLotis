@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AppLotis.Dtos {
-    class LavagemDto {
+    public class LavagemDto {
         public int Id { get; set; }
 
         public int VeiculoId { get; set; }

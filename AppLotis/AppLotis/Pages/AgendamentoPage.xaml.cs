@@ -37,7 +37,7 @@ namespace AppLotis.Pages {
 
         private async void OnContinuarClicked(object sender, EventArgs e) {
             LavagemSingleton.Latitude = MapLocalizacao.Pins.FirstOrDefault().Position.Latitude;
-            LavagemSingleton.Latitude = MapLocalizacao.Pins.FirstOrDefault().Position.Longitude;
+            LavagemSingleton.Longitude = MapLocalizacao.Pins.FirstOrDefault().Position.Longitude;
             LavagemSingleton.Endereco = EnderecoCompleto;
 
             var tempo = TimeSpan.Parse(SliderHorario.Value + ":00");
