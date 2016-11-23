@@ -69,5 +69,10 @@ namespace AppLotis {
             }
         }
 
+        private async void OnEntrarClicked(object sender, EventArgs e) {
+            //TODO: Largar informações no banco de dados
+
+            await Navigation.PushModalAsync(new LoginPage());
+        }
     }
 }

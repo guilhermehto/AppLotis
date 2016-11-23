@@ -11,5 +11,10 @@ namespace AppLotis.Pages {
         public ConfiguracoesPage() {
             InitializeComponent();
         }
+
+        private void OnSairClicked(object sender, EventArgs e) {
+            //TODO: Deslogar da API e remover da base de dados
+            Application.Current.MainPage = new MainPage();
+        }
     }
 }

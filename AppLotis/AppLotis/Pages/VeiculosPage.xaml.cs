@@ -14,7 +14,7 @@ namespace AppLotis.Pages {
         }
         
         protected override async void OnAppearing() {
-            /*var sourceVEiculos = new List<VeiculoDto>();
+            var sourceVEiculos = new List<VeiculoDto>();
             for (int i = 0; i < 5; i++) {
                 var veiculo = new VeiculoDto {
                     Placa = $"ABC - {i}{i}{i}{i}",
@@ -24,7 +24,7 @@ namespace AppLotis.Pages {
                 };
                 sourceVEiculos.Add(veiculo);
             }
-            ListVeiculos.ItemsSource = sourceVEiculos;*/
+            ListVeiculos.ItemsSource = sourceVEiculos;
         }
     }
 }

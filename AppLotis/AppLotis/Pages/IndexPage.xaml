@@ -3,14 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:AppLotis.Pages;assembly=AppLotis"
              x:Class="AppLotis.Pages.IndexPage"
-             BarBackgroundColor="#4D2D50">
-
-  <pages:VeiculosPage/>
+             BarBackgroundColor="#ebebeb"
+             BarTextColor="#333333" >
 
   <!-- 
-  <pages:LavagensPage Title="Lavagens"/>
-  
-  <pages:ConfiguracoesPage Title="Configurações" />
+  <NavigationPage Title="Lotis">
+    <x:Arguments>
+      <pages:VeiculosPage x:Name="VeiculosPageChild"/>
+    </x:Arguments>
+  </NavigationPage>
+
+  <NavigationPage Title="Lotis">
+    <x:Arguments>
+      <pages:LavagensPage Title="Lavagens" x:Name="LavagensPageChild" />
+    </x:Arguments>
+  </NavigationPage>
+
+  <NavigationPage Title="Lotis">
+    <x:Arguments>
+      <pages:ConfiguracoesPage x:Name="ConfiguracoesPageChild" Title="Configurações" />
+    </x:Arguments>
+  </NavigationPage>
+
   -->
+
+  <pages:VeiculosPage x:Name="VeiculosPageChild"/>
+
+  <pages:LavagensPage Title="Lavagens" x:Name="LavagensPageChild" />
+
+  <pages:ConfiguracoesPage x:Name="ConfiguracoesPageChild" Title="Configurações" />
 
 </TabbedPage>

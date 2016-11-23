@@ -47,6 +47,8 @@
     <Compile Include="Dtos\VeiculoDto.cs" />
     <Compile Include="Helpers\MensagensErro.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Pages\ConfiguracoesPage.xaml.cs">
       <DependentUpon>ConfiguracoesPage.xaml</DependentUpon>
     </Compile>
@@ -55,6 +57,9 @@
     </Compile>
     <Compile Include="Pages\LavagensPage.xaml.cs">
       <DependentUpon>LavagensPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -221,6 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ConfiguracoesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

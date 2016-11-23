@@ -5,7 +5,9 @@
   
   <StackLayout Padding="20,20,20,0">
     <Label Text="Configurações" FontSize="35" Style="{StaticResource LabelPrimary}" />
-    
+
+
+    <Button Text="Sair" Style="{StaticResource BtnDefault}"  VerticalOptions="EndAndExpand" Clicked="OnSairClicked"/>
   </StackLayout>
   
 </ContentPage>

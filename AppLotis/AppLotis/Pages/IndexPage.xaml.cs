@@ -10,6 +10,7 @@ namespace AppLotis.Pages {
     public partial class IndexPage : TabbedPage {
         public IndexPage() {
             InitializeComponent();
+            CurrentPage = LavagensPageChild;
         }
     }
 }

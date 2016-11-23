@@ -4,7 +4,22 @@
              x:Class="AppLotis.Pages.LavagensPage">
   
   <StackLayout Padding="20,20,20,0">
-    <Label Text="Lavagens" FontSize="35" Style="{StaticResource LabelPrimary}" />
+    <ListView x:Name="ListLavagens" RowHeight="80">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label FontSize="20" Text="{Binding Endereco}" Style="{StaticResource LabelPrimary}"/>
+              <StackLayout Orientation="Horizontal">
+                <Label FontSize="20" Text="{Binding DiaHorario}" Style="{StaticResource LabelPrimary}" HorizontalOptions="StartAndExpand"/>
+                <Label FontSize="20" Text="{Binding ValorEmReais, StringFormat='R{0:C}'}" Style="{StaticResource LabelPrimary}" HorizontalOptions="EndAndExpand"/>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
 
+    <Button Text="Nova Lavagem" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/>
   </StackLayout>
 </ContentPage>

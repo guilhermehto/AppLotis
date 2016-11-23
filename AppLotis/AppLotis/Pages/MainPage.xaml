@@ -27,7 +27,10 @@
   <Label Text="Cor" Style="{StaticResource LabelPrimary}"/>
   <Picker x:Name="PickerCores" />
 
-  <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked" VerticalOptions="EndAndExpand"/>
+  
+  <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked" VerticalOptions="End"/>
+
+  <Button Text="Já tenho conta" Style="{StaticResource BtnDefault}" Clicked="OnEntrarClicked" VerticalOptions="End"/>
   
 </StackLayout>
 
