@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database\MarcaDatabase.cs" />
+    <Compile Include="Database\TokenDatabase.cs" />
     <Compile Include="Dtos\AdicionalDto.cs" />
     <Compile Include="Dtos\LavagemDto.cs" />
     <Compile Include="Dtos\MarcaDto.cs" />

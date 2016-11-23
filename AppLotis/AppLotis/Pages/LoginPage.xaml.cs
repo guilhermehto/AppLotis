@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppLotis.Database;
 using AppLotis.Models;
 using AppLotis.Rest;
 using Xamarin.Forms;
@@ -24,6 +25,8 @@ namespace AppLotis.Pages {
             var resultadoLogin = await apiUsuario.Logar(model);
             
             if (resultadoLogin != null) {
+                var dbToken = new TokenDatabase();
+                dbToken.AddToken(resultadoLogin);
                 var page = new IndexPage();
                 Application.Current.MainPage = page;
             } else {

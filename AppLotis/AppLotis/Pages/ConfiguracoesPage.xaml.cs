@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using AppLotis.Database;
 using Xamarin.Forms;
 
 namespace AppLotis.Pages {
@@ -13,7 +13,11 @@ namespace AppLotis.Pages {
         }
 
         private void OnSairClicked(object sender, EventArgs e) {
-            //TODO: Deslogar da API e remover da base de dados
+            var dbToken = new TokenDatabase();
+            var token = dbToken.GetToken();
+            //TODO: Remover ID
+            var id = dbToken.DeleteToken(token.Id);
+            DisplayAlert("Token", id.ToString(), "Ok");
             Application.Current.MainPage = new MainPage();
         }
     }
