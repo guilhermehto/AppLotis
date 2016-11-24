@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using AppLotis.Database;
 using AppLotis.Pages;
+using AppLotis.Singletons;
 using Xamarin.Forms;
 
 namespace AppLotis {
@@ -13,6 +14,7 @@ namespace AppLotis {
 
             var dbtoken = new TokenDatabase();
             if (dbtoken.TokenExists()) {
+                TokenSingleton.Token = dbtoken.GetToken().AccessToken;
                 MainPage = new IndexPage();
             } else {
                 MainPage = new AppLotis.MainPage();

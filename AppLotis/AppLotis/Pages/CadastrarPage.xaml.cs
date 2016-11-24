@@ -35,17 +35,19 @@ namespace AppLotis.Pages {
                 ConfirmPassword = UsuarioSingleton.Senha
             };
 
+            
+            var resultadoUsuario = await apiUsuario.RegistrarNovoUsuario(model);
+
             var apiVeiculo = new RestVeiculo();
             var modelVeiculo = new VeiculoDto() {
                 Placa = VeiculoSingleton.Placa,
                 Cor = VeiculoSingleton.Cor,
                 Marca = VeiculoSingleton.Marca,
-                Modelo = VeiculoSingleton.Modelo
+                Modelo = VeiculoSingleton.Modelo,
+                UsuarioId = resultadoUsuario.Id
             };
 
             var resultadoVeiculo = await apiVeiculo.PostVeiculo(modelVeiculo);
-            var resultadoUsuario = await apiUsuario.RegistrarNovoUsuario(model);
-
 
             var apiLavagem = new RestLavagem();
 

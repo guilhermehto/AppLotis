@@ -97,6 +97,7 @@
     <Compile Include="Singletons\ListaCores.cs" />
     <Compile Include="Singletons\ListaMarcas.cs" />
     <Compile Include="Singletons\ListasSingleton.cs" />
+    <Compile Include="Singletons\TokenSingleton.cs" />
     <Compile Include="Singletons\UsuarioSingleton.cs" />
     <Compile Include="Singletons\VeiculoSingleton.cs" />
     <Compile Include="Validation\EmailValidatorBehavior.cs" />

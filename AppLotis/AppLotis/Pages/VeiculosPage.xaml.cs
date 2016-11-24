@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Rest;
 using Xamarin.Forms;
 
 namespace AppLotis.Pages {
@@ -15,7 +16,7 @@ namespace AppLotis.Pages {
         
         protected override async void OnAppearing() {
             var sourceVEiculos = new List<VeiculoDto>();
-            for (int i = 0; i < 5; i++) {
+            /*for (int i = 0; i < 5; i++) {
                 var veiculo = new VeiculoDto {
                     Placa = $"ABC - {i}{i}{i}{i}",
                     Modelo = "Fiesta",
@@ -23,8 +24,13 @@ namespace AppLotis.Pages {
                     Cor = "Rosa"
                 };
                 sourceVEiculos.Add(veiculo);
+            }*/
+            var apiVeiculos = new RestVeiculo();
+            var veiculos = await apiVeiculos.LoadVeiculos();
+            if (veiculos == null) {
+                await DisplayAlert("Erro", "Veiculos = null", "ok");
             }
-            ListVeiculos.ItemsSource = sourceVEiculos;
+            ListVeiculos.ItemsSource = veiculos;
         }
     }
 }

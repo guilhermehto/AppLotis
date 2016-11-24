@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AppLotis.Database;
 using AppLotis.Models;
 using AppLotis.Rest;
+using AppLotis.Singletons;
 using Xamarin.Forms;
 
 namespace AppLotis.Pages {
@@ -27,6 +28,7 @@ namespace AppLotis.Pages {
             if (resultadoLogin != null) {
                 var dbToken = new TokenDatabase();
                 dbToken.AddToken(resultadoLogin);
+                TokenSingleton.Token = resultadoLogin.AccessToken;
                 var page = new IndexPage();
                 Application.Current.MainPage = page;
             } else {
