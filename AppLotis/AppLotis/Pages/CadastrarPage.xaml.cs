@@ -61,7 +61,8 @@ namespace AppLotis.Pages {
                 TipoLavagemId = LavagemSingleton.TipoLavagemId,
                 TrocoEmReais = LavagemSingleton.TrocoEmReais,
                 UsuarioId = resultadoUsuario.Id,
-                VeiculoId = resultadoVeiculo.Id
+                VeiculoId = resultadoVeiculo.Id,
+                Adicionais = LavagemSingleton.Adicionais
             };
             var resultadoLavagem = await apiLavagem.PostLavagem(modelLavagem);
 

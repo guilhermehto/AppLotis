@@ -27,5 +27,6 @@ namespace AppLotis.Dtos {
         public string LocalDeRecebimento { get; set; }
 
         public DateTime DiaHorario { get; set; }
+        public ICollection<AdicionalDto> Adicionais { get; set; }
     }
 }

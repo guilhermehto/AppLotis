@@ -55,6 +55,7 @@ namespace AppLotis.Pages {
             }
             if (!possuiIgual) {
                 adicionados.Add(selecionadoAdd);
+                LavagemSingleton.Adicionais = adicionados;
                 LavagemSingleton.ValorEmReais += selecionadoAdd.ValorEmReais;
                 UpdateTextoValorTotal();
             }
@@ -69,6 +70,7 @@ namespace AppLotis.Pages {
                 if (a.Nome == adicional.Text) {
                     adicionados.RemoveAt(index);
                     LavagemSingleton.ValorEmReais -= a.ValorEmReais;
+                    LavagemSingleton.Adicionais = adicionados;
                     //LavagemSingleton.TipoLavagemId = a.Id;
                     UpdateTextoValorTotal();
                     break;

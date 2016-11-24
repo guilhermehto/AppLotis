@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppLotis.Dtos;
 
 namespace AppLotis.Singletons {
 
@@ -25,6 +26,7 @@ namespace AppLotis.Singletons {
         public static string LocalDeRecebimento { get; set; }
 
         public static DateTime DiaHorario { get; set; }
+        public static ICollection<AdicionalDto> Adicionais { get; set; }
 
     }
 }
