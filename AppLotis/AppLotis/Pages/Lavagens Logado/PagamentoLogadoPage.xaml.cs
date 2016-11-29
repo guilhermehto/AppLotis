@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AppLotis.Dtos;
 using AppLotis.Helpers;
 using AppLotis.Rest;
+using AppLotis.Singletons;
 using Xamarin.Forms;
 
 namespace AppLotis.Pages.Lavagens_Logado {
@@ -35,6 +36,7 @@ namespace AppLotis.Pages.Lavagens_Logado {
             var apiUsuario = new RestUsuario();
             var meuid = await apiUsuario.GetMeuId();
             if (meuid != null) {
+                _lavagem.StatusId = StatusDisponiveis.AGENDADA;
                 _lavagem.LocalDeRecebimento = EntryLocalDePagamento.Text;
                 _lavagem.UsuarioId = meuid;
                 _lavagem.Cidade = "Santa Cruz do Sul";

@@ -14,5 +14,6 @@ namespace AppLotis.Helpers {
         public static readonly string TELEFONE_INVALIDO = "Telefone deve conter ao menos 8 caracteres.";
         public static readonly string LOCAL_DE_PAGAMENTO_BRANCO = "Digite o local do pagamento";
         public static readonly string CEP_NAO_ENCONTRADO = "CEP não encontrado, tente novamente";
+        public static readonly string CAMPOS_EM_BRANCO = "Por favor, preencha todos os campos.";
     }
 }

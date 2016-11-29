@@ -24,7 +24,7 @@
       </ListView.ItemTemplate>
     </ListView>
     
-    <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/> 
+    <Button Text="Novo Veículo" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand" Clicked="OnBtnNovoVeiculoClicked"/> 
 
   </StackLayout>
   

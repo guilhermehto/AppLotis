@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Pages.Veiculos;
 using AppLotis.Rest;
 using Xamarin.Forms;
 
@@ -31,6 +32,10 @@ namespace AppLotis.Pages {
                 await DisplayAlert("Erro", "Veiculos = null", "ok");
             }
             ListVeiculos.ItemsSource = veiculos;
+        }
+
+        private async void OnBtnNovoVeiculoClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new NovoVeiculoPage());
         }
     }
 }

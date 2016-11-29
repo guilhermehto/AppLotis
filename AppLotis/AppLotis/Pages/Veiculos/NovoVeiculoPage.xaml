@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLotis.Pages.Veiculos.NovoVeiculoPage">
+  <StackLayout x:Name="StackPrincipal" Padding="20,20,20,0">
+
+    <Label Text="Marca" Style="{StaticResource LabelPrimary}" FontSize="25" />
+    <Picker x:Name="PickerMarcas" />
+
+    <Label Text="Modelo" Style="{StaticResource LabelPrimary}" FontSize="25" />
+    <Entry x:Name="EntryModelo" HorizontalTextAlignment="Center" FontSize="20" />
+    
+    <Label Text="Placa" Style="{StaticResource LabelPrimary}" FontSize="25" />
+    <Entry x:Name="EntryPlaca" HorizontalTextAlignment="Center" FontSize="20" />
+
+    <Label Text="Cor" Style="{StaticResource LabelPrimary}" FontSize="25" />
+    <Picker x:Name="PickerCores" />
+    
+    
+    <Button Text="Salvar Veiculo" Style="{StaticResource BtnPrimary}" VerticalOptions="EndAndExpand" Clicked="OnBtnSalvarClicked"/>
+    
+  </StackLayout>
+</ContentPage>

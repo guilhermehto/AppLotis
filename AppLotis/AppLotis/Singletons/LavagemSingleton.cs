@@ -25,6 +25,7 @@ namespace AppLotis.Singletons {
         public static float TrocoEmReais { get; set; }
         public static string LocalDeRecebimento { get; set; }
         public static float TempoTotalDeDuracaoEmHoras { get; set; }
+        public static int StatusId { get; set; }
 
         public static DateTime DiaHorario { get; set; }
         public static ICollection<AdicionalDto> Adicionais { get; set; }
