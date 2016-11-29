@@ -11,7 +11,10 @@
 
     <Label Text="Qual horário fica melhor para você?" FontSize="20" Style="{StaticResource LabelPrimary}" />
     <Slider x:Name="SliderHorario" Maximum="16" Minimum="9"/>
-    <Label x:Name="LabelHorario" Text="Horário: " FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <StackLayout Orientation="Horizontal">
+      <Label x:Name="LabelHorario" Text="Horário: " FontSize="20" Style="{StaticResource LabelPrimary}" />
+      <Label x:Name="LabelDuracaoTotal" Text="Duração do serviço: " FontSize="20" Style="{StaticResource LabelPrimary}" />
+    </StackLayout>
 
     <Label Text="Onde seu carro irá estar?" FontSize="20" Style="{StaticResource LabelPrimary}"  />
     <Label x:Name="LabelEndereco" Text="Rua Albino Augusto Assmann, 50" FontSize="15" Style="{StaticResource LabelPrimary}"/>

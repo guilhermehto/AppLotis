@@ -25,6 +25,7 @@ namespace AppLotis.Dtos {
         public float TrocoEmReais { get; set; }
 
         public string LocalDeRecebimento { get; set; }
+        public float TempoTotalDeDuracaoEmHoras { get; set; }
 
         public DateTime DiaHorario { get; set; }
         public ICollection<AdicionalDto> Adicionais { get; set; }

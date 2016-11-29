@@ -35,6 +35,7 @@ namespace AppLotis.Pages {
                 LavagemSingleton.ValorEmReais =
                     ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
                 LabelDescricao.Text = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Descricao;
+                LavagemSingleton.TempoTotalDeDuracaoEmHoras += ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).TempoDeDuracaoEmHoras;
                 UpdateTextoValorTotal();
             } catch (Exception e) {
                 DisplayAlert("Erro", MensagensErro.SEM_INTERNET, "Ok");
@@ -57,6 +58,7 @@ namespace AppLotis.Pages {
                 adicionados.Add(selecionadoAdd);
                 LavagemSingleton.Adicionais = adicionados;
                 LavagemSingleton.ValorEmReais += selecionadoAdd.ValorEmReais;
+                LavagemSingleton.TempoTotalDeDuracaoEmHoras += selecionadoAdd.TempoDeDuracaoEmHoras;
                 UpdateTextoValorTotal();
             }
         }
@@ -70,6 +72,7 @@ namespace AppLotis.Pages {
                 if (a.Nome == adicional.Text) {
                     adicionados.RemoveAt(index);
                     LavagemSingleton.ValorEmReais -= a.ValorEmReais;
+                    LavagemSingleton.TempoTotalDeDuracaoEmHoras -= a.TempoDeDuracaoEmHoras;
                     LavagemSingleton.Adicionais = adicionados;
                     //LavagemSingleton.TipoLavagemId = a.Id;
                     UpdateTextoValorTotal();
@@ -95,9 +98,12 @@ namespace AppLotis.Pages {
                                    ",00";
             LavagemSingleton.ValorEmReais -=
                 ListasSingleton.TipoLavagens.ElementAt(IndexLavagemAntigo).ValorEmReais;
+            LavagemSingleton.TempoTotalDeDuracaoEmHoras -= 
+                ListasSingleton.TipoLavagens.ElementAt(IndexLavagemAntigo).TempoDeDuracaoEmHoras;
             LavagemSingleton.ValorEmReais +=
                 ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).ValorEmReais;
             LavagemSingleton.TipoLavagemId = ListasSingleton.TipoLavagens.ElementAt(PickerLavagens.SelectedIndex).Id;
+            
             IndexLavagemAntigo = PickerLavagens.SelectedIndex;
             UpdateTextoValorTotal();
 

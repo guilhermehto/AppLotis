@@ -33,6 +33,7 @@ namespace AppLotis.Pages {
                 Position = new Position(posUsuario.Latitude, posUsuario.Longitude),
                 Label = "Seu carro"
             });
+            LabelDuracao.Text = "Duração: " + LavagemSingleton.TempoTotalDeDuracaoEmHoras + ":00 hora(s)";
         }
 
         private async void OnContinuarClicked(object sender, EventArgs e) {

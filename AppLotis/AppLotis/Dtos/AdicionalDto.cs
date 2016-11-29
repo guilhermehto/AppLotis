@@ -9,6 +9,7 @@ namespace AppLotis.Dtos {
         public int Id { get; set; }
         public string Nome { get; set; }
         public float ValorEmReais { get; set; }
+        public float TempoDeDuracaoEmHoras { get; set; }
         //public ICollection<LavagemDto> Lavagens { get; set; }
     }
 }

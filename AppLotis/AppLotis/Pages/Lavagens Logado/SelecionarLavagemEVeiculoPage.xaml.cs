@@ -61,6 +61,7 @@ namespace AppLotis.Pages.Lavagens_Logado {
 
             _lavagem.VeiculoId = veiculos.ElementAt(PickerVeiculos.SelectedIndex).Id;
             _lavagem.TipoLavagemId = tipos.ElementAt(PickerLavagens.SelectedIndex).Id;
+            _lavagem.TempoTotalDeDuracaoEmHoras += tipos.ElementAt(PickerLavagens.SelectedIndex).TempoDeDuracaoEmHoras;
         }
 
         private void OnRemoverAdicionalClicked(object sender, EventArgs e) {
@@ -72,6 +73,7 @@ namespace AppLotis.Pages.Lavagens_Logado {
                 if (a.Nome == adicional.Text) {
                     adicionaisSelecionados.RemoveAt(index);
                     _lavagem.ValorEmReais -= a.ValorEmReais;
+                    _lavagem.TempoTotalDeDuracaoEmHoras -= a.TempoDeDuracaoEmHoras;
                     _lavagem.Adicionais = adicionaisSelecionados;
                     //LavagemSingleton.TipoLavagemId = a.Id;
                     LabelPrecoTotal.Text = "Preço total: R$" + _lavagem.ValorEmReais + ".00";
@@ -87,6 +89,7 @@ namespace AppLotis.Pages.Lavagens_Logado {
             if (!adicionaisSelecionados.Contains(adicionais.ElementAt(index))) {
                 adicionaisSelecionados.Add(adicionais.ElementAt(index));
                 _lavagem.ValorEmReais += adicionais.ElementAt(index).ValorEmReais;
+                _lavagem.TempoTotalDeDuracaoEmHoras += adicionais.ElementAt(index).TempoDeDuracaoEmHoras;
                 LabelPrecoTotal.Text = "Preço total: R$" + _lavagem.ValorEmReais + ".00";
             }
         }
@@ -103,8 +106,10 @@ namespace AppLotis.Pages.Lavagens_Logado {
 
         private void OnPickerLavagensIndexChanged(object sender, EventArgs e) {
             _lavagem.ValorEmReais -= tipos.ElementAt(oldIndexTipoLavagem).ValorEmReais;
+            _lavagem.TempoTotalDeDuracaoEmHoras -= tipos.ElementAt(oldIndexTipoLavagem).TempoDeDuracaoEmHoras;
             oldIndexTipoLavagem = PickerLavagens.SelectedIndex;
             _lavagem.ValorEmReais += tipos.ElementAt(oldIndexTipoLavagem).ValorEmReais;
+            _lavagem.TempoTotalDeDuracaoEmHoras += tipos.ElementAt(oldIndexTipoLavagem).TempoDeDuracaoEmHoras;
             LabelPrecoTotal.Text = "Preço total: R$" + _lavagem.ValorEmReais + ".00";
             _lavagem.TipoLavagemId = tipos.ElementAt(PickerLavagens.SelectedIndex).Id;
 

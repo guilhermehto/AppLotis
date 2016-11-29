@@ -27,6 +27,7 @@ namespace AppLotis.Pages.Lavagens_Logado {
             var tempo = TimeSpan.Parse(SliderHorario.Value + ":00");
             _lavagem.DiaHorario = DatePickerDiaDaLavagem.Date + tempo;
             SliderHorario.ValueChanged += OnSliderHorarioChanged;
+            LabelDuracaoTotal.Text = "Duração: " + _lavagem.TempoTotalDeDuracaoEmHoras + ":00 hora(s)";
         }
 
 

@@ -10,5 +10,6 @@ namespace AppLotis.Dtos {
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public float ValorEmReais { get; set; }
+        public float TempoDeDuracaoEmHoras { get; set; }
     }
 }
