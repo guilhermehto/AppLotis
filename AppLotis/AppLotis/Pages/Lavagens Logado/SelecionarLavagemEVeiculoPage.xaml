@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLotis.Pages.Lavagens_Logado.SelecionarLavagemEVeiculoPage">
+  <StackLayout Padding="20,20,20,0">
+    <Label Text="Selecione seu veículo" Style="{StaticResource LabelPrimary}" />
+    <Picker x:Name="PickerVeiculos" />
+    
+    <Label Text="Qual lavagem você deseja?" Style="{StaticResource LabelPrimary}" />
+    <Picker x:Name="PickerLavagens" />
+    
+    <Label Text="Algum Adicional?" Style="{StaticResource LabelPrimary}" />
+    <Picker x:Name="PickerAdicionais" />
+    <Button Text="Selecionar Adicional" Style="{StaticResource BtnDefault}" Clicked="OnSelecionarAdicionalClicked" />
+    
+    <ListView x:Name="ListViewAdicionais">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Nome}"  FontSize="20" Style="{StaticResource LabelPrimary}" VerticalOptions="Center"/>
+                    <Label Text="{Binding ValorEmReais, StringFormat='R{0:C}'}" FontSize="20" Style="{StaticResource LabelPrimary}" VerticalOptions="Center"/>
+                    <Button Text="Remover" HorizontalOptions="EndAndExpand" Style="{StaticResource BtnDefault}" Clicked="OnRemoverAdicionalClicked"/>
+                  </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+    
+    
+    <Label x:Name="LabelPrecoTotal" Text="Preço total: R$40,00" FontSize="30" Style="{StaticResource LabelPrimary}" VerticalOptions="EndAndExpand"/>
+    <Button Text="Continuar" Style="{StaticResource BtnPrimary}" VerticalOptions="EndAndExpand" Clicked="OnBtnContinuarClicked"/>
+  </StackLayout>
+</ContentPage>

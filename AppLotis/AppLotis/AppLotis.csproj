@@ -46,7 +46,9 @@
     <Compile Include="Dtos\TipoLavagemDto.cs" />
     <Compile Include="Dtos\UsuarioDto.cs" />
     <Compile Include="Dtos\VeiculoDto.cs" />
+    <Compile Include="Helpers\AuthHelper.cs" />
     <Compile Include="Helpers\MensagensErro.cs" />
+    <Compile Include="Helpers\MensagensSucesso.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Token.cs" />
@@ -55,6 +57,21 @@
     </Compile>
     <Compile Include="Pages\IndexPage.xaml.cs">
       <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lavagens Logado\ConfirmarLavagemPage.xaml.cs">
+      <DependentUpon>ConfirmarLavagemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lavagens Logado\DefinirPagamentoPage.xaml.cs">
+      <DependentUpon>DefinirPagamentoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lavagens Logado\PagamentoLogadoPage.xaml.cs">
+      <DependentUpon>PagamentoLogadoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lavagens Logado\SelecionarLavagemEVeiculoPage.xaml.cs">
+      <DependentUpon>SelecionarLavagemEVeiculoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lavagens Logado\SelecionarLocalLogadoPage.xaml.cs">
+      <DependentUpon>SelecionarLocalLogadoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LavagensPage.xaml.cs">
       <DependentUpon>LavagensPage.xaml</DependentUpon>
@@ -171,6 +188,9 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.1\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SeleecionarLavagemPage.xaml">
@@ -234,6 +254,36 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Lavagens Logado\SelecionarLavagemEVeiculoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Lavagens Logado\DefinirPagamentoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Lavagens Logado\SelecionarLocalLogadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Lavagens Logado\PagamentoLogadoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Lavagens Logado\ConfirmarLavagemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

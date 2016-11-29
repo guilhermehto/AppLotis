@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Helpers;
 using AppLotis.Singletons;
 using Newtonsoft.Json;
 
@@ -35,12 +36,12 @@ namespace AppLotis.Rest {
             }
         }
 
-        public async Task<IEnumerable<VeiculoDto>> LoadVeiculos() {
+        public async Task<List<VeiculoDto>> LoadVeiculos() {
             var veiculos = new List<VeiculoDto>();
             try {
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Add("Authorization","Bearer " + TokenSingleton.Token);
+                client.DefaultRequestHeaders.Add(AuthHelper.AuthorizationType, AuthHelper.MakeBearer(TokenSingleton.Token));
                 var resposta = await client.GetAsync(GET_VEICULOS_URL);
                 if (resposta.IsSuccessStatusCode) {
                     var conteudo = await resposta.Content.ReadAsStringAsync();

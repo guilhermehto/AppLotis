@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="AppLotis.Pages.Lavagens_Logado.SelecionarLocalLogadoPage">
+
+
+  <StackLayout Padding="20,20,20,0" Orientation="Vertical">
+    <Label Text="Que dia você quer sua lavagem?" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <DatePicker x:Name="DatePickerDiaDaLavagem" HorizontalOptions="Center" />
+
+    <Label Text="Qual horário fica melhor para você?" FontSize="20" Style="{StaticResource LabelPrimary}" />
+    <Slider x:Name="SliderHorario" Maximum="16" Minimum="9"/>
+    <Label x:Name="LabelHorario" Text="Horário: " FontSize="20" Style="{StaticResource LabelPrimary}" />
+
+    <Label Text="Onde seu carro irá estar?" FontSize="20" Style="{StaticResource LabelPrimary}"  />
+    <Label x:Name="LabelEndereco" Text="Rua Albino Augusto Assmann, 50" FontSize="15" Style="{StaticResource LabelPrimary}"/>
+
+    <maps:Map WidthRequest="320" HeightRequest="150"
+            x:Name="MapLocalizacao"
+            IsShowingUser="False"
+            MapType="Street"
+            IsEnabled="True"
+        />
+
+
+    <Label Text="Não é o local correto?" FontSize="15" Style="{StaticResource LabelPrimary}" />
+
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Cep: " FontSize="20" Style="{StaticResource LabelPrimary}" />
+      <Entry x:Name="EntryCep" WidthRequest="150" Keyboard="Numeric" Placeholder="11222333"/>
+      <Button Text="Pesquisar" Style="{StaticResource BtnDefault}" Clicked="OnBtnPesquisarClicked"/>
+    </StackLayout>
+
+
+    <Button Text="Continuar" Style="{StaticResource BtnPrimary}" Clicked="OnContinuarClicked"/>
+  </StackLayout>
+  
+  
+</ContentPage>

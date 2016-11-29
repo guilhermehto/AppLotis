@@ -23,7 +23,7 @@ namespace AppLotis.Pages {
         protected override async void OnAppearing() {
             var locator = CrossGeolocator.Current;
             Geocoder geocoder = new Geocoder();
-            var posUsuario = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+            var posUsuario = await locator.GetPositionAsync(timeoutMilliseconds: 20000);
             var enderecos = await geocoder.GetAddressesForPositionAsync(new Position(posUsuario.Latitude, posUsuario.Longitude));
             var endereco = enderecos.FirstOrDefault();
             EnderecoCompleto = endereco;

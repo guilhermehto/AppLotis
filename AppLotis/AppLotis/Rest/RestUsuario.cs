@@ -5,7 +5,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Helpers;
 using AppLotis.Models;
+using AppLotis.Singletons;
 using AppLotis.ViewModels;
 using Newtonsoft.Json;
 
@@ -15,6 +17,7 @@ namespace AppLotis.Rest {
         private readonly string URL = "http://webslave.azurewebsites.net/api/Account";
         private readonly string REGISTER_URL = "Register";
         private readonly string LOGIN_URL = "http://webslave.azurewebsites.net/token";
+        private readonly string MEU_ID_URL = "http://webslave.azurewebsites.net/api/account/meuid";
 
 
         public RestUsuario() {
@@ -52,6 +55,25 @@ namespace AppLotis.Rest {
                 var token = JsonConvert.DeserializeObject<Token>(respostaConteudo);
                 return token;
             }
+            return null;
+        }
+
+        public async Task<string> GetMeuId() {
+            try {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
+                client.DefaultRequestHeaders.Add(AuthHelper.AuthorizationType, AuthHelper.MakeBearer(TokenSingleton.Token));
+                var resposta = await client.GetAsync(MEU_ID_URL);
+                if (resposta.IsSuccessStatusCode) {
+                    var conteudo = resposta.Content.ReadAsStringAsync().Result;
+                    var conteudoNovo = conteudo.Replace("\"", "");
+                    return conteudoNovo;
+                }
+
+            } catch (Exception e) {
+                return null;
+            }
+
             return null;
         }
     }

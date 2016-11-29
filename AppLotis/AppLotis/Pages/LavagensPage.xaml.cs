@@ -4,45 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppLotis.Dtos;
+using AppLotis.Pages.Lavagens_Logado;
+using AppLotis.Rest;
 using Xamarin.Forms;
 
 namespace AppLotis.Pages {
     public partial class LavagensPage : ContentPage {
         public LavagensPage() {
             InitializeComponent();
-            List<LavagemDto> lavagens = new List<LavagemDto>();
-            lavagens.Add(new LavagemDto() {
-                Endereco = "Rua Albino Augusto Assmann, 50",
-                DiaHorario = DateTime.Now,
-                ValorEmReais = 40
-            });
+        }
 
-            lavagens.Add(new LavagemDto() {
-                Endereco = "Rua Albinio, 50",
-                DiaHorario = DateTime.Now,
-                ValorEmReais = 40
-            });
 
-            lavagens.Add(new LavagemDto() {
-                Endereco = "Rua Albinio, 50",
-                DiaHorario = DateTime.Now,
-                ValorEmReais = 40
-            });
-
-            lavagens.Add(new LavagemDto() {
-                Endereco = "Rua Albinio, 50",
-                DiaHorario = DateTime.Now,
-                ValorEmReais = 40
-            });
-
-            lavagens.Add(new LavagemDto() {
-                Endereco = "Rua Albinio, 50",
-                DiaHorario = DateTime.Now,
-                ValorEmReais = 40
-            });
-
+        protected override async void OnAppearing() {
+            var apiLavagens = new RestLavagem();
+            var lavagens = await apiLavagens.LoadLavagens();
             ListLavagens.ItemsSource = lavagens;
+        }
 
+        private async void OnNovaLavagemClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new SelecionarLavagemEVeiculoPage());
 
         }
     }

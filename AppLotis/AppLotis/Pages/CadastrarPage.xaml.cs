@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppLotis.Database;
 using AppLotis.Dtos;
 using AppLotis.Helpers;
+using AppLotis.Models;
 using AppLotis.Rest;
 using AppLotis.Singletons;
 using AppLotis.ViewModels;
@@ -73,8 +75,18 @@ namespace AppLotis.Pages {
 
             //TODO: Melhorar essas verificações
             if (resultadoUsuario.Id != null && resultadoVeiculo.Cor != null && resultadoLavagem != null) {
-                var page = new IndexPage();
-                Application.Current.MainPage = page;
+                var resultadoLogin = await apiUsuario.Logar(new Login() {
+                    Password = UsuarioSingleton.Senha,
+                    Username = UsuarioSingleton.Email
+                });
+
+                if (resultadoLogin != null) {
+                    var dbToken = new TokenDatabase();
+                    dbToken.AddToken(resultadoLogin);
+                    TokenSingleton.Token = resultadoLogin.AccessToken;
+                    var page = new IndexPage();
+                    Application.Current.MainPage = page;
+                }
             } else {
                 await DisplayAlert("Erro", resultadoLavagem, "Ok");
             }

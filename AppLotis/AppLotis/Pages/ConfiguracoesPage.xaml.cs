@@ -15,9 +15,7 @@ namespace AppLotis.Pages {
         private void OnSairClicked(object sender, EventArgs e) {
             var dbToken = new TokenDatabase();
             var token = dbToken.GetToken();
-            //TODO: Remover ID
             var id = dbToken.DeleteToken(token.Id);
-            DisplayAlert("Token", id.ToString(), "Ok");
             Application.Current.MainPage = new MainPage();
         }
     }

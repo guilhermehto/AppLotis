@@ -20,6 +20,6 @@
       </ListView.ItemTemplate>
     </ListView>
 
-    <Button Text="Nova Lavagem" Style="{StaticResource BtnPrimary}"  VerticalOptions="EndAndExpand"/>
+    <Button Text="Nova Lavagem" Style="{StaticResource BtnPrimary}" Clicked="OnNovaLavagemClicked" VerticalOptions="EndAndExpand"/>
   </StackLayout>
 </ContentPage>

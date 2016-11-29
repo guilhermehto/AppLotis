@@ -32,8 +32,9 @@ namespace AppLotis {
             var apiTipos = new RestTipoLavagem();
             var listaAdicionais = await apiAdicionais.LoadAdicionais();
             var listaTipos = await apiTipos.LoadTipos();
-            ListasSingleton.Adicionais = listaAdicionais;
             ListasSingleton.TipoLavagens = listaTipos;
+            ListasSingleton.Adicionais = listaAdicionais;
+
 
 
         }

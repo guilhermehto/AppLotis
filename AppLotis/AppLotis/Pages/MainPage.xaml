@@ -7,7 +7,10 @@
              x:Class="AppLotis.MainPage">
 <StackLayout Padding="20,20,20,0" x:Name="StackPrincipal">
 
+  <!-- 
   <Image Source="http://i.imgur.com/Ug9dElJ.png" Scale="1" />
+  -->
+  <Image Source="http://i.imgur.com/SxfB79e.png" Scale="1" />
 
   <Label Text="Marca" Style="{StaticResource LabelPrimary}"/>
   <Picker x:Name="PickerMarcas"/>
